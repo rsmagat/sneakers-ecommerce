@@ -10,7 +10,7 @@ body * {
 
 }
     .navbar-brand {
-        border-bottom: 3px solid;
+
     }
     .navbar .nav-item .nav-link {
         font-size: 13px;
@@ -28,7 +28,7 @@ body * {
     background-attachment: scroll;
     background-position: center center;
     background-size: cover;
-    height: 700px;
+    height: 710px;
 }
 
 .features {
