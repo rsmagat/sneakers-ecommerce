@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400&display=swap');
+
+body * {
+    margin: 0;
+    padding: 0;
+    font-family: 'Raleway', sans-serif;
+}
+
+.navbar {
+
+}
+    .navbar-brand {
+        border-bottom: 3px solid;
+    }
+    .navbar .nav-item .nav-link {
+        font-size: 13px;
+        color: #fff;
+    }
+    @media(min-width: 1201px) {
+        .navbar .navbar-mid .nav-item .nav-link:hover {
+            border-bottom: 2px solid;
+        }
+    }
+
+    .masthead {
+    background-image: url(landing.jpg);
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-position: center center;
+    background-size: cover;
+    height: 700px;
+}
+
+.features {
+    background-color: #f0f0dd;
+}
+    .features .feature {
+        background-color: #f0f0e9;
+    }
+    .features .feature-header {
+        letter-spacing: 1px;
+    }
+
+#shoe-list {
+    height: 2000px;
+    background-color: #f0f0e9;
+}
