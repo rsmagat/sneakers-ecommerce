@@ -1,0 +1,13 @@
+<div class="col-xs-12 col-sm-6 col-md-4 p-2">
+    <div class="card border-0 shadow">
+        <a href="#"><%= image_tag (sneaker.image_path), class: "card-img-top img-fluid", alt: "sneaker.name" %></a>
+        <div class="card-body">
+            <h5 class="card-title fw-bold text-warning"><%= sneaker.name %></h5>
+            <p class="card-text fw-bold"><%= sneaker.price %></p>
+            <button class="btn btn-success shadow-sm mt-5 w-100 fw-bold text-uppercase">Add
+                to Cart</button>
+            <button class="btn btn-warning shadow-sm mt-2 w-100 fw-bold text-uppercase">Buy
+                Now</button>
+        </div>
+    </div>
+</div>

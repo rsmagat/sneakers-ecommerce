@@ -22,7 +22,7 @@ body * {
         }
     }
 
-    .masthead {
+.masthead {
     background-image: url(landing.jpg);
     background-repeat: no-repeat;
     background-attachment: scroll;
@@ -30,6 +30,9 @@ body * {
     background-size: cover;
     height: 700px;
 }
+    .masthead .btn {
+        font-size: 15px;
+    }
 
 .features {
     background-color: #f0f0dd;
@@ -42,6 +45,11 @@ body * {
     }
 
 #shoe-list {
-    height: 2000px;
     background-color: #f0f0e9;
 }
+    #shoe-list .btn a, #shoe-list .btn {
+        font-size: 13px;
+    }
+    #shoe-list .filter a {
+        width: 110px;
+    }
