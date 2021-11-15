@@ -7,19 +7,14 @@ body * {
 }
 
 .navbar {
-
+    background-color: rgb(41, 41, 41);
 }
     .navbar-brand {
 
     }
     .navbar .nav-item .nav-link {
-        font-size: 13px;
         color: #fff;
-    }
-    @media(min-width: 1201px) {
-        .navbar .navbar-mid .nav-item .nav-link:hover {
-            border-bottom: 2px solid;
-        }
+        font-size: 13px;
     }
 
     .masthead {
@@ -42,6 +37,11 @@ body * {
     }
 
 #shoe-list {
-    height: 2000px;
     background-color: #f0f0e9;
 }
+    #shoe-list .btn a, #shoe-list .btn {
+        font-size: 13px;
+    }
+    #shoe-list .filter a {
+        width: 110px;
+    }
