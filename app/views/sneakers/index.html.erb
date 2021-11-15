@@ -93,21 +93,21 @@
                 <div class="col-12 p-3">
                     <div class="col-lg-9 d-flex flex-wrap mx-auto mt-2">
                         <div class="col-12 col-md-4 p-2">
-                            <div class="feature rounded-1 text-center shadow p-3 h-100">
+                            <div class="feature rounded-1 text-center shadow-sm p-3 h-100">
                                 <i class="fas fa-shipping-fast fs-3 mb-3"></i>
                                 <h6 class="feature-header text-uppercase fw-bold">Canada-Wide Delivery</h6>
                                 <p>Shipping is available to anywhere in Canada.</p>
                             </div>
                         </div>
                         <div class="col-12 col-md-4 p-2">
-                            <div class="feature rounded-1 text-center shadow p-3 h-100">
+                            <div class="feature rounded-1 text-center shadow-sm p-3 h-100">
                                 <i class="fas fa-lock fs-3 mb-3"></i>
                                 <h6 class="feature-header text-uppercase fw-bold">Secure Payments</h6>
                                 <p>Online payments are secured and encrypted.</p>
                             </div>
                         </div>
                         <div class="col-12 col-md-4 p-2">
-                            <div class="feature rounded-1 text-center shadow p-3 h-100">
+                            <div class="feature rounded-1 text-center shadow-sm p-3 h-100">
                                 <i class="fas fa-undo-alt fs-3 mb-3"></i>
                                 <h6 class="feature-header text-uppercase fw-bold">Simple Returns</h6>
                                 <p>Returning an item is easy and no hassle.</p>
@@ -131,12 +131,10 @@
                             <div class="pb-sm-0 pb-2"><a href="" class="btn btn-warning text-uppercase fw-bold pt-2 shadow pb-2 mx-2">Reset</a></div>
                         </div>
                     </div>
-                    <div class="">
-                        <div class="col-lg-9 mt-3 d-flex flex-wrap justify-content-start mx-auto">
-                            <% @sneakers.each do |sneaker| %>
-                                <%= render "sneaker", sneaker: sneaker %>
-                            <% end %>
-                        </div>
+                    <div class="col-lg-9 mt-3 d-flex flex-wrap justify-content-start mx-auto">
+                        <% @sneakers.each do |sneaker| %>
+                            <%= render "sneaker", sneaker: sneaker %>
+                        <% end %>
                     </div>
                 </div>
             </div>
