@@ -21,13 +21,10 @@
                 <div class="mx-auto">
                     <ul class="navbar-mid navbar-nav text-uppercase">
                         <li class="nav-item active mx-xl-3">
-                            <a class="nav-link" href="#">Home</a>
+                            <a class="nav-link" href="<%= sneakers_path %>">Home</a>
                         </li>
                         <li class="nav-item mx-xl-3">
-                            <a class="nav-link" href="#">Products</a>
-                        </li>
-                        <li class="nav-item mx-xl-3">
-                            <a class="nav-link" href="#">Categories</a>
+                            <a class="nav-link" href="<%= brands_path %>">Brands</a>
                         </li>
                         <li class="nav-item mx-xl-3">
                             <a class="nav-link" href="#">About</a>
@@ -88,9 +85,9 @@
                         <% @brand.sneakers.each do |sneaker| %>
                             <div class="col-xs-12 col-sm-6 col-md-4 p-2">
                                 <div class="card border-0 shadow-sm">
-                                    <a href="#"><%= image_tag (sneaker.image_path), class: "card-img-top shadow-sm img-fluid", alt: "sneaker.name" %></a>
+                                    <a href="<%= sneaker_path(sneaker) %>"><%= image_tag (sneaker.image_path), class: "card-img-top shadow-sm img-fluid", alt: sneaker.name %></a>
                                     <div class="card-body">
-                                        <h5 class="card-title"><a href="#" class="fw-bold text-warning text-decoration-none"><%= sneaker.name %></a></h5>
+                                        <h5 class="card-title"><a href="<%= sneaker_path(sneaker) %>" class="fw-bold text-warning text-decoration-none"><%= sneaker.name %></a></h5>
                                         <p class="card-text fw-bold"><%= number_to_currency(sneaker.price) %></p>
                                     </div>
                                 </div>

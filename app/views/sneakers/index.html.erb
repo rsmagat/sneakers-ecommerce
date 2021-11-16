@@ -21,13 +21,13 @@
                 <div class="mx-auto">
                     <ul class="navbar-mid navbar-nav text-uppercase">
                         <li class="nav-item active mx-xl-3">
-                            <a class="nav-link" href="#">Home</a>
+                            <a class="nav-link" href="<%= sneakers_path %>">Home</a>
                         </li>
                         <li class="nav-item mx-xl-3">
-                            <a class="nav-link" href="#">Products</a>
+                            <a class="nav-link" href="#sneaker-container">Sneakers</a>
                         </li>
                         <li class="nav-item mx-xl-3">
-                            <a class="nav-link" href="#">Categories</a>
+                            <a class="nav-link" href="<%= brands_path %>">Brands</a>
                         </li>
                         <li class="nav-item mx-xl-3">
                             <a class="nav-link" href="#">About</a>
@@ -123,7 +123,7 @@
         <div class="container-fluid">
             <div class="row" id="sneaker-container">
                 <div class="col-12 p-3">
-                    <div class="col-lg-9 d-flex flex-wrap mx-auto mt-2 align-items-center p-2">
+                    <div class="col-lg-9 d-flex flex-wrap mx-auto mt-5 align-items-center p-2">
                         <h5 class="fw-bold">Filter Results:</h5>
                         <div class="filter d-flex flex-wrap justify-content-center pt-sm-0 pt-2">
                             <div class="pb-sm-0 pb-2"><a href="" class="btn btn-success text-uppercase fw-bold pt-2 shadow pb-2 mx-2 pt-0">Sale</a></div>
@@ -131,7 +131,7 @@
                             <div class="pb-sm-0 pb-2"><a href="" class="btn btn-warning text-uppercase fw-bold pt-2 shadow pb-2 mx-2">Reset</a></div>
                         </div>
                     </div>
-                    <div class="col-lg-9 mt-3 d-flex flex-wrap justify-content-start mx-auto">
+                    <div class="col-lg-9 mt-4 d-flex flex-wrap justify-content-start mx-auto">
                         <% @sneakers.each do |sneaker| %>
                             <%= render "sneaker", sneaker: sneaker %>
                         <% end %>
