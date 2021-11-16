@@ -10,22 +10,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_13_215958) do
+ActiveRecord::Schema.define(version: 2021_11_16_012251) do
 
   create_table "brands", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "image_path"
   end
 
   create_table "sneakers", force: :cascade do |t|
     t.string "name"
     t.text "description"
-    t.decimal "price"
     t.string "image_path"
     t.integer "brand_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "status"
+    t.integer "sale_price"
+    t.integer "price"
     t.index ["brand_id"], name: "index_sneakers_on_brand_id"
   end
 
