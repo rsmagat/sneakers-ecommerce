@@ -94,26 +94,40 @@
             </form>
         </div>
     </div>
-    <!-- BRAND LIST -->
-    <section>
+    <!-- SHOE LIST -->
+    <section id="shoe-list">
         <div class="container-fluid">
             <div class="row">
-                <div class="brand-container col-12 p-3">
+                <div class="brand-sneaker-container col-12 p-3">
                     <div class="col-lg-9 mx-auto p-2">
-                        <h1 class="fw-bold fst-italic">Brands</h1>
-                        <h5 class="fst-italic">List of all brands</h5>
+                        <h1 class="fw-bold fst-italic">
+                        Search
+                        <% if @sneakers.count > 1 || @sneakers.count === 0 %>
+                            Results
+                        <% else %>
+                            Result
+                        <% end %>
+                        </h1>
+                        <h5 class="fst-italic">Found <%= pluralize(@sneakers.count, 'Result') %> when searching for
+                        <% if params[:keywords] == ""%>
+                            "<%= @sneakers[0].brand.name %>"
+                        <% else %>
+                            "<%= params[:keywords] %>"
+                        <% end %></h5>
                         <hr class="mt-3">
                     </div>
-                    <div class="col-lg-9 mx-auto mt-3">
-                        <div class="col-md-12 d-flex flex-wrap justify-content-start">
-                            <% @brands.each do |brand| %>
-                                <div class="col-md-6 p-2">
-                                    <div class="brand-card shadow-sm h-100">
-                                        <a href="<%= brand_path(brand) %>"><%= image_tag (brand.image_path), class: "img-fluid", alt: brand.name %></a>
+                    <div class="col-lg-9 mt-3 d-flex flex-wrap justify-content-start mx-auto">
+                        <% @sneakers.each do |sneaker| %>
+                            <div class="col-xs-12 col-sm-6 col-md-4 p-2">
+                                <div class="card border-0 shadow-sm">
+                                    <a href="<%= sneaker_path(sneaker) %>"><%= image_tag (sneaker.image_path), class: "card-img-top shadow-sm img-fluid", alt: sneaker.name %></a>
+                                    <div class="card-body">
+                                        <h5 class="card-title"><a href="<%= sneaker_path(sneaker) %>" class="fw-bold text-warning text-decoration-none"><%= sneaker.name %></a></h5>
+                                        <p class="card-text fw-bold"><%= number_to_currency(sneaker.price) %></p>
                                     </div>
                                 </div>
-                            <% end %>
-                        </div>
+                            </div>
+                        <% end %>
                     </div>
                 </div>
             </div>

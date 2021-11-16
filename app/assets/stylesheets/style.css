@@ -17,7 +17,11 @@ body * {
         font-size: 13px;
     }
 
-    .masthead {
+#searchbar {
+    transition: transform 0s;
+}
+
+.masthead {
     background-image: url(landing.jpg);
     background-repeat: no-repeat;
     background-attachment: scroll;
