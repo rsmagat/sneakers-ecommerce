@@ -4,8 +4,8 @@ Sneaker.delete_all
 Brand.delete_all
 
 brands = [
-    { :name => "Jordan", :image_path => ""},
-    { :name => "Nike", :image_path => ""}
+    { :name => "Jordan", :image_path => "brands/jordan.png"},
+    { :name => "Nike", :image_path => "brands/nike.png"}
 ]
 
 sneakers = [
@@ -44,7 +44,6 @@ end
 
 sneakers.each do |sneaker_pair|
     brand = brand(sneaker_pair[:brand])
-
 
     brand.sneakers.create(
         name: "#{sneaker_pair[:name]}",

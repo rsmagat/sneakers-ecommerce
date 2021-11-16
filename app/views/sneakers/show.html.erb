@@ -96,7 +96,14 @@
                         <div class="col-md-3 mt-3 p-2">
                             <div class="card border-0 shadow-sm">
                                 <div class="card-body">
-                                    <h5 class="card-title fw-bold text-warning">Price: <%= number_to_currency(@sneaker.price) %></h5>
+                                    <% if @sneaker.status == "sale" %>
+                                        <div class="d-flex">
+                                            <h5 class="card-text text-mute text-decoration-line-through"><%= number_to_currency(@sneaker.price) %></h5>
+                                            <h5 class="card-text text-warning fw-bold mx-2"><%= number_to_currency(@sneaker.sale_price) %></h5>
+                                        </div>
+                                    <% else %>
+                                    <h5 class="card-text fw-bold mx-2"><%= number_to_currency(@sneaker.price) %></h5>
+                                <% end %>
                                     <p class="card-text mt-3"><%= @sneaker.description %></p>
                                     <div>
                                         <button class="btn btn-success shadow-sm mt-5 w-100 fw-bold text-uppercase">Add to Cart</button>

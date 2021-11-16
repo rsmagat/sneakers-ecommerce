@@ -81,12 +81,16 @@
                         <h5 class="fst-italic">List of all brands</h5>
                         <hr class="mt-3">
                     </div>
-                    <div class="col-lg-9 mt-3 mx-auto p-3">
-                        <ul>
+                    <div class="col-lg-9 mx-auto">
+                        <div class="col-md-12 d-flex flex-wrap justify-content-start p-2">
                             <% @brands.each do |brand| %>
-                                <li style="list-style-type: circle;"><%= link_to brand.name, brand_path(brand), class: "text-decoration-none" %></li>
+                                <div class="col-md-6">
+                                    <div class="shadow-sm h-100">
+                                        <a href="<%= brand_path(brand) %>"><%= image_tag (brand.image_path), class: "img-fluid", alt: brand.name %></a>
+                                    </div>
+                                </div>
                             <% end %>
-                        </ul>
+                        </div>
                     </div>
                 </div>
             </div>
