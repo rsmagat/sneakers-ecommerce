@@ -108,11 +108,15 @@
                             Result
                         <% end %>
                         </h1>
-                        <h5 class="fst-italic">Found <%= pluralize(@sneakers.count, 'Result') %> when searching for
-                        <% if params[:keywords] == ""%>
-                            "<%= @sneakers[0].brand.name %>"
-                        <% else %>
-                            "<%= params[:keywords] %>"
+                        <h5 class="fst-italic">Found <%= pluralize(@sneakers.count, 'Result') %>
+                        <% if params[:keywords] == "" && params[:brands] != "" %>
+                            when searching for "<%= @sneakers[0].brand.name %>"
+                        <% end %>
+
+                        <% if params[:brands] == "" && params[:keywords] == "" %>
+
+                        <% elsif params[:brands] == "" && params[:keywords] != "" %>
+                            when searching for "<%= params[:keywords] %>"
                         <% end %></h5>
                         <hr class="mt-3">
                     </div>
