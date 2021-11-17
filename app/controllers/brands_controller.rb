@@ -6,5 +6,7 @@ class BrandsController < ApplicationController
   def show
     @brands = Brand.all
     @brand = Brand.find(params[:id])
+
+    @sneakers = @brand.sneakers.page params[:page]
   end
 end

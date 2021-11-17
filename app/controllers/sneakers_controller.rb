@@ -1,6 +1,6 @@
 class SneakersController < ApplicationController
   def index
-    @sneakers = Sneaker.all
+    @sneakers = Sneaker.includes(:brand).page params[:page]
     @brands = Brand.all
   end
 
@@ -11,12 +11,12 @@ class SneakersController < ApplicationController
   end
 
   def sale
-    @sale = Sneaker.where("status LIKE ?", "sale")
+    @sale = Sneaker.where("status LIKE ?", "sale").page params[:page]
     @brands = Brand.all
   end
 
   def new
-    @new = Sneaker.where("status LIKE ?", "new")
+    @new = Sneaker.where("status LIKE ?", "new").page params[:page]
     @brands = Brand.all
   end
 

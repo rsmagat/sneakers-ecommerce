@@ -10,10 +10,9 @@
 
 <body>
     <!-- NAVBAR -->
-    <nav class="navbar fixed-top navbar-expand-xl navbar-dark shadow-lg" style="z-index: 1;">
+    <nav class="navbar fixed-top navbar-expand-xl navbar-dark shadow-lg">
         <div class="container-fluid mx-xl-5">
             <a class="navbar-brand text-warning text-uppercase fs-5" href="#"><b>Sneakers</b> R <b>Us</b></a>
-
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarLinks">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -153,6 +152,10 @@
                             <div class="pb-sm-0 pb-2"><a href="<%= new_path %>#sneaker-container" class="btn btn-success text-uppercase fw-bold pt-2 shadow pb-2 mx-2">New</a></div>
                             <div class="pb-sm-0 pb-2"><a href="<%= sneakers_path %>#sneaker-container" class="btn btn-warning text-uppercase fw-bold pt-2 shadow pb-2 mx-2">Reset</a></div>
                         </div>
+                    </div>
+                    <div class="col-lg-9 mx-auto p-2">
+                        <%= paginate @sneakers, window: 2 %>
+                        <hr class="mt-3">
                     </div>
                     <div class="col-lg-9 mt-4 d-flex flex-wrap justify-content-start mx-auto">
                         <% @sneakers.each do |sneaker| %>

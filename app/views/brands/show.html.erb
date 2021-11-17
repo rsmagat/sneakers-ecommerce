@@ -10,10 +10,9 @@
 
 <body id="brands-body">
     <!-- NAVBAR -->
-    <nav class="navbar fixed-top navbar-expand-xl navbar-dark shadow-lg" style="z-index: 1;">
+    <nav class="navbar fixed-top navbar-expand-xl navbar-dark shadow-lg">
         <div class="container-fluid mx-xl-5">
             <a class="navbar-brand text-warning text-uppercase fs-5" href="#"><b>Sneakers</b> R <b>Us</b></a>
-
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarLinks">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -102,10 +101,13 @@
                     <div class="col-lg-9 mx-auto p-2">
                         <h1 class="fw-bold fst-italic"><%= @brand.name %></h1>
                         <h5 class="fst-italic">List of <%= @brand.name %> sneakers</h5>
+                    </div>
+                    <div class="col-lg-9 mx-auto p-2">
+                        <%= paginate @sneakers, window: 2 %>
                         <hr class="mt-3">
                     </div>
                     <div class="col-lg-9 mt-3 d-flex flex-wrap justify-content-start mx-auto">
-                        <% @brand.sneakers.each do |sneaker| %>
+                        <% @sneakers.each do |sneaker| %>
                             <div class="col-xs-12 col-sm-6 col-md-4 p-2">
                                 <div class="card border-0 shadow-sm">
                                     <a href="<%= sneaker_path(sneaker) %>"><%= image_tag (sneaker.image_path), class: "card-img-top shadow-sm img-fluid", alt: sneaker.name %></a>
