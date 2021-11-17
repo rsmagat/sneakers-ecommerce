@@ -21,15 +21,17 @@ class SneakersController < ApplicationController
   end
 
   def search
-    @brands = Brand.all
+    @brands = Brand.all.page params[:page]
 
     wildcard_search = "%#{params[:keywords]}%"
     brands = "#{params[:brands]}"
 
     if params[:brands] == ""
         @sneakers = Sneaker.where("name LIKE ?", wildcard_search)
+        @sneakers_pagination = Sneaker.where("name LIKE ?", wildcard_search).page params[:page]
     else
         @sneakers = Sneaker.where("name LIKE ? AND brand_id = ?", wildcard_search, brands)
+        @sneakers_pagination = Sneaker.where("name LIKE ? AND brand_id = ?", wildcard_search, brands).page params[:page]
     end
   end
 end
