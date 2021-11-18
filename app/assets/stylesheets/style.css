@@ -59,3 +59,7 @@ body * {
     #brands-body .brand-container {
         margin-top: 100px;
     }
+
+#customers-body {
+    background-color: #f0f0e9;
+}
