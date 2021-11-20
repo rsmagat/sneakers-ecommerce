@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  provincial: 9.99
+  goods_and_services: 9.99
+  harmonized: 9.99
+
+two:
+  name: MyString
+  provincial: 9.99
+  goods_and_services: 9.99
+  harmonized: 9.99
