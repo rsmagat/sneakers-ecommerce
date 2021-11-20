@@ -18,26 +18,19 @@
                             <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control", placeholder: "Repeat Password" %>
                         </div>
 
-                        <%# <div class="field mt-2">
-                            <input type="text" class="form-control" placeholder="Province">
-                        </div> %>
-
-                        <%# <select class="form-select" aria-label="Default select example">
-                            <option selected>Open this select menu</option>
-                            <option value="1">One</option>
-                            <option value="2">Two</option>
-                            <option value="3">Three</option>
-                        </select> %>
-
                         <div class="actions mt-3">
                             <%= f.submit "Sign up", class: "btn btn-success text-uppercase fw-bold w-100" %>
                         </div>
                     <% end %>
                     <p class="small mt-2">By continuing, you agree to our Conditions of Use and Privacy Notice.</p>
+                    <hr class="mt-2">
+                    <p class=" small mt-2">Have an account? <a class="text-decoration-none text-warning" href="<%= new_customer_session_path %>">Log in.</a></p>
                 </div>
+                <div class="text-danger fw-bold p-4">
                     <%= render "devise/shared/error_messages", resource: resource %>
                     <p class="notice"><%= notice %></p>
                     <p class="alert"><%= alert %></p>
+                </div>
             </div>
         </div>
     </div>

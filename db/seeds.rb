@@ -33,13 +33,26 @@ sneakers = [
     { :name => "Air Max Light", :price => "109", :sale_price => "89", :brand => "Nike", :status => "sale", :image_path => "sneakers/sneaker_20.jpg" },
 ]
 
+provinces = [
+    { :name => "Alberta", :provincial => "0.00", :goods_and_services => "0.05", :harmonized => "0.00" },
+    { :name => "British Columbia", :provincial => "0.07", :goods_and_services => "0.05", :harmonized => "0.00" },
+    { :name => "Manitoba", :provincial => "0.07", :goods_and_services => "0.05", :harmonized => "0.00" },
+    { :name => "New Brunswick", :provincial => "0.00", :goods_and_services => "0.00", :harmonized => "0.15" },
+    { :name => "Newfoundland and Labrador", :provincial => "0.00", :goods_and_services => "0.00", :harmonized => "0.15" },
+    { :name => "Northwest Territories", :provincial => "0.00", :goods_and_services => "0.05", :harmonized => "0.00" },
+    { :name => "Nova Scotia", :provincial => "0.00", :goods_and_services => "0.00", :harmonized => "0.15" },
+    { :name => "Nunavut", :provincial => "0.00", :goods_and_services => "0.05", :harmonized => "0.00" },
+    { :name => "Ontario", :provincial => "0.00", :goods_and_services => "0.00", :harmonized => "0.13" },
+    { :name => "Prince Edward Island", :provincial => "0.00", :goods_and_services => "0.00", :harmonized => "0.15" },
+]
+
 def brand(name)
     Brand.where(name: "#{name}").first
 end
 
 brands.each do |brand|
     Brand.create(
-        name: "#{brand[:name]}",
+        name:       "#{brand[:name]}",
         image_path: "#{brand[:image_path]}"
     )
 end
@@ -48,14 +61,24 @@ sneakers.each do |sneaker_pair|
     brand = brand(sneaker_pair[:brand])
 
     brand.sneakers.create(
-        name: "#{sneaker_pair[:name]}",
-        description: Faker::Lorem.paragraph_by_chars(number: 256, supplemental: false),
-        image_path: "#{sneaker_pair[:image_path]}",
-        price: "#{sneaker_pair[:price]}",
-        sale_price: "#{sneaker_pair[:sale_price]}",
-        status: "#{sneaker_pair[:status]}"
+        name:           "#{sneaker_pair[:name]}",
+        description:    Faker::Lorem.paragraph_by_chars(number: 256, supplemental: false),
+        image_path:     "#{sneaker_pair[:image_path]}",
+        price:          "#{sneaker_pair[:price]}",
+        sale_price:     "#{sneaker_pair[:sale_price]}",
+        status:         "#{sneaker_pair[:status]}"
+    )
+end
+
+provinces.each do |province|
+    Province.create(
+        name:               "#{province[:name]}",
+        provincial:         "#{province[:provincial]}",
+        goods_and_services: "#{province[:goods_and_services]}",
+        harmonized:         "#{province[:harmonized]}"
     )
 end
 
 puts "Created #{Brand.count} brands."
 puts "Created #{Sneaker.count} sneakers."
+puts "Created #{Province.count} provinces."

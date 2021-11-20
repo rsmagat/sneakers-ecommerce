@@ -32,8 +32,8 @@
                     <hr class="mt-2">
                     <p class=" small mt-2">New here? <a class="text-decoration-none text-warning" href="<%= new_registration_path(resource_name) %>">Create an account.</a></p>
                 </div>
-                <div class="text-danger fw-bold border">
-                    <p class="notice"><%= notice %></p>
+                <div class="text-danger fw-bold p-2 border">
+                    <%= render "devise/shared/error_messages", resource: resource %>
                     <p class="alert"><%= alert %></p>
                 </div>
             </div>
