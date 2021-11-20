@@ -2,6 +2,8 @@ require 'faker'
 
 Sneaker.delete_all
 Brand.delete_all
+Province.delete_all
+Customer.delete_all
 
 brands = [
     { :name => "Jordan", :image_path => "brands/jordan.png"},

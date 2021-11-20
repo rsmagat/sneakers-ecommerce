@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_20_174842) do
+ActiveRecord::Schema.define(version: 2021_11_20_180002) do
 
   create_table "brands", force: :cascade do |t|
     t.string "name"
@@ -27,7 +27,9 @@ ActiveRecord::Schema.define(version: 2021_11_20_174842) do
     t.datetime "remember_created_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "province_id", null: false
     t.index ["email"], name: "index_customers_on_email", unique: true
+    t.index ["province_id"], name: "index_customers_on_province_id"
     t.index ["reset_password_token"], name: "index_customers_on_reset_password_token", unique: true
   end
 
@@ -53,5 +55,6 @@ ActiveRecord::Schema.define(version: 2021_11_20_174842) do
     t.index ["brand_id"], name: "index_sneakers_on_brand_id"
   end
 
+  add_foreign_key "customers", "provinces"
   add_foreign_key "sneakers", "brands"
 end
