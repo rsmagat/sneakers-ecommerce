@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SNEAKERS R US</title>
+</head>
+
+<body id="brands-body">
+    <!-- NAVBAR -->
+    <nav class="navbar fixed-top navbar-expand-xl navbar-dark shadow-lg">
+        <div class="container-fluid mx-xl-5">
+            <a class="navbar-brand text-warning text-uppercase fs-5" href="#"><b>Sneakers</b> R <b>Us</b></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarLinks">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarLinks">
+                <div class="mx-auto">
+                    <ul class="navbar-mid navbar-nav text-uppercase">
+                        <li class="nav-item active mx-xl-3">
+                            <a class="nav-link" href="<%= sneakers_path %>">Home</a>
+                        </li>
+                        <li class="nav-item mx-xl-3">
+                            <a class="nav-link" href="<%= brands_path %>">Brands</a>
+                        </li>
+                        <li class="nav-item mx-xl-3">
+                            <a class="nav-link" href="#">About</a>
+                        </li>
+                        <li class="nav-item mx-xl-3">
+                            <a class="nav-link" href="#">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="d-none d-xl-block">
+                    <ul class="navbar-nav text-uppercase small">
+                        <li class="nav-item">
+                            <a class="nav-link" data-bs-toggle="collapse" href="#searchbar">
+                                <i class="fas fa-search fs-5"></i>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#"><i class="fas fa-user-circle fs-5"></i>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#"><i class="fas fa-shopping-cart fs-5"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="d-xl-none d-block me-auto mt-2 mx-2 mx-xl-0">
+            <ul class="navbar-nav text-uppercase">
+                <div class="d-flex mx-1">
+                    <li class="nav-item">
+                        <a class="nav-link" data-bs-toggle="collapse" href="#searchbar">
+                            <i class="fas fa-search fs-5"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item mx-2">
+                        <a class="nav-link" href="#"><i class="fas fa-user-circle fs-5"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item mx-2">
+                        <a class="nav-link" href="#"><i class="fas fa-shopping-cart fs-5"></i>
+                        </a>
+                    </li>
+                </div>
+            </ul>
+        </div>
+    </nav>
+    <div class="collapse" id="searchbar">
+        <div class="card card-body rounded-0 shadow fixed-top mt-5 p-3">
+            <a class="btn-close ms-auto" data-bs-toggle="collapse" data-bs-target="#searchbar" style="height: 5px;"></a>
+            <form class="d-lg-flex flex-wrap justify-content-center mt-2" action="<%= search_sneakers_path %>" method="get" accept-charset="UTF-8">
+                <div class="col-lg-2 mx-lg-2">
+                    <select class="form-select text-uppercase" name="brands">
+                        <option value="" selected>Brand</option>
+                        <% @brands.each do |brand| %>
+                            <option value="<%= brand.id %>"><%= brand.name %></option>
+                        <% end %>
+                    </select>
+                </div>
+                <div class="col-lg-8 mx-lg-1 mt-2 mt-lg-0">
+                    <input class="form-control" name="keywords" type="search" placeholder="ex. Air Jordan 1">
+                </div>
+                <div class="col-xl-1 mx-lg-2 mt-2 mt-lg-0">
+                    <button class="btn btn-success text-uppercase fw-bold w-100" type="submit">Search</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!-- SHOE LIST -->
+    <section id="shoe-list">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="brand-sneaker-container col-12 p-3">
+                    <div class="col-lg-9 mx-auto p-2">
+                        <h1 class="fw-bold fst-italic"></h1>
+                        <nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='currentColor'/%3E%3C/svg%3E&#34;);" aria-label="breadcrumb">
+                            <ol class="breadcrumb fw-bold mt-3">
+                                <li class="breadcrumb-item text-capitalize small text-decoration-none"><a href="<%= sneakers_path %>" class="text-decoration-none">Home</a></li>
+                                <li class="breadcrumb-item text-capitalize small active fw-bold" aria-current="page"></li>
+                            </ol>
+                        </nav>
+                        <hr class="mt-3">
+                    </div>
+                    <div class="d-flex flex-wrap justify-content-center">
+                        <div class="col-md-6 mt-3">
+                            <div class="col-12 p-2 mx-auto">
+                                <div class="card border-0 shadow-sm">
+                                    <div class="card-body">
+                                        <p>HAHAHAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 mt-3 p-2">
+                            <div class="card border-0 shadow-sm">
+                                <div class="card-body">
+                                    <div>
+                                        <button class="btn btn-success shadow-sm mt-5 w-100 fw-bold text-uppercase">Add to Cart</button>
+                                        <button class="btn btn-warning shadow-sm mt-2 w-100 fw-bold text-uppercase">Buy Now</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>
