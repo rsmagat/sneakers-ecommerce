@@ -112,7 +112,11 @@
                         <div class="col-md-6 mt-3">
                             <div class="col-12 p-2 mx-auto">
                                 <div class="card border-0 shadow-sm">
-                                    <%= image_tag (@sneaker.image_path), class: "card-img-top shadow-sm img-fluid", alt: @sneaker.name %>
+                                    <% if @sneaker.image.present? %>
+                                        <%= image_tag @sneaker.image, class: "card-img-top shadow-sm img-fluid", alt: @sneaker.name %>
+                                    <% else %>
+                                        <%= image_tag @sneaker.image_path, class: "card-img-top shadow-sm img-fluid", alt: @sneaker.name %>
+                                    <% end %>
                                     <div class="card-body">
                                         <h5 class="card-title fw-bold text-warning"><%= @sneaker.name %></h5>
                                         <h5 class="fw-bold mt-4">Product Information</h5>

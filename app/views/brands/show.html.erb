@@ -117,7 +117,11 @@
                         <% @sneakers.each do |sneaker| %>
                             <div class="col-xs-12 col-sm-6 col-md-4 p-2">
                                 <div class="card border-0 shadow-sm">
-                                    <a href="<%= sneaker_path(sneaker) %>"><%= image_tag (sneaker.image_path), class: "card-img-top shadow-sm img-fluid", alt: sneaker.name %></a>
+                                    <% if sneaker.image.present? %>
+                                        <a href="<%= sneaker_path(sneaker) %>"><%= image_tag sneaker.image, class: "card-img-top shadow-sm img-fluid", alt: sneaker.name %></a>
+                                    <% else %>
+                                        <a href="<%= sneaker_path(sneaker) %>"><%= image_tag (sneaker.image_path), class: "card-img-top shadow-sm img-fluid", alt: sneaker.name %></a>
+                                    <% end %>
                                     <div class="card-body">
                                         <h5 class="card-title"><a href="<%= sneaker_path(sneaker) %>" class="fw-bold text-warning text-decoration-none"><%= sneaker.name %></a></h5>
                                         <p class="card-text fw-bold"><%= number_to_currency(sneaker.price) %></p>
