@@ -81,4 +81,4 @@ end
 
 puts "Created #{Brand.count} brands."
 puts "Created #{Sneaker.count} sneakers."
-puts "Created #{Province.count} provinces."
+puts "Created #{Province.count} provinces."AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?

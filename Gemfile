@@ -63,3 +63,6 @@ gem 'kaminari'
 
 # Devise Authentication
 gem 'devise'
+
+# Admin dashboard
+gem 'activeadmin'
