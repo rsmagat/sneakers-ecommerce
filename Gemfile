@@ -66,6 +66,3 @@ gem 'devise'
 
 # Admin dashboard
 gem 'activeadmin'
-
-# Active Admin theme
-gem 'active_admin_theme'
