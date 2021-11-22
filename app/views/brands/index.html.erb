@@ -114,7 +114,11 @@
                             <% @brands.each do |brand| %>
                                 <div class="col-md-6 p-2">
                                     <div class="brand-card shadow-sm h-100">
-                                        <a href="<%= brand_path(brand) %>"><%= image_tag (brand.image_path), class: "img-fluid", alt: brand.name %></a>
+                                        <% if brand.image.present? %>
+                                            <a href="<%= brand_path(brand) %>"><%= image_tag brand.image, class: "img-fluid", alt: brand.name %></a>
+                                        <% else %>
+                                            <a href="<%= brand_path(brand) %>"><%= image_tag (brand.image_path), class: "img-fluid", alt: brand.name %></a>
+                                        <% end %>
                                     </div>
                                 </div>
                             <% end %>
