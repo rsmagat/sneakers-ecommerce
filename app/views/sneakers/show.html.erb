@@ -132,11 +132,11 @@
                                 <div class="card-body">
                                     <% if @sneaker.status == "sale" %>
                                         <div class="d-flex">
-                                            <h5 class="card-text text-mute text-decoration-line-through"><%= number_to_currency(@sneaker.price) %></h5>
-                                            <h5 class="card-text text-warning fw-bold mx-2"><%= number_to_currency(@sneaker.sale_price) %></h5>
+                                            <h5 class="price card-text text-mute text-decoration-line-through"><%= number_to_currency(@sneaker.price) %></h5>
+                                            <h5 class="price card-text text-success fw-bold mx-2"><%= number_to_currency(@sneaker.sale_price) %></h5>
                                         </div>
                                     <% else %>
-                                    <h5 class="card-text fw-bold mx-2"><%= number_to_currency(@sneaker.price) %></h5>
+                                    <h5 class="price card-text fw-bold"><%= number_to_currency(@sneaker.price) %></h5>
                                 <% end %>
                                     <p class="card-text mt-3"><%= @sneaker.description %></p>
                                     <div>

@@ -9,11 +9,11 @@
             <h5 class="card-title"><%= link_to sneaker.name, sneaker_path(sneaker), class: "fw-bold text-warning text-decoration-none" %></h5>
             <% if sneaker.status == "sale" %>
                 <div class="d-flex">
-                    <p class="card-text text-mute text-decoration-line-through"><%= number_to_currency(sneaker.price) %></p>
-                    <p class="card-text fw-bold mx-2"><%= number_to_currency(sneaker.sale_price) %></p>
+                    <p class="price card-text text-mute text-decoration-line-through"><%= number_to_currency(sneaker.price) %></p>
+                    <p class="price card-text fw-bold text-success mx-2"><%= number_to_currency(sneaker.sale_price) %></p>
                 </div>
             <% else %>
-                <p class="card-text fw-bold mx-2"><%= number_to_currency(sneaker.price) %></p>
+                <p class="price card-text fw-bold"><%= number_to_currency(sneaker.price) %></p>
             <% end %>
             <button class="btn btn-success shadow-sm mt-5 w-100 fw-bold text-uppercase">Add
                 to Cart</button>

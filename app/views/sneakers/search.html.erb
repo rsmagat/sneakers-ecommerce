@@ -136,8 +136,14 @@
                                         <a href="<%= sneaker_path(sneaker) %>"><%= image_tag (sneaker.image_path), class: "card-img-top shadow-sm img-fluid", alt: sneaker.name %></a>
                                     <% end %>
                                     <div class="card-body">
-                                        <h5 class="card-title"><a href="<%= sneaker_path(sneaker) %>" class="fw-bold text-warning text-decoration-none"><%= sneaker.name %></a></h5>
-                                        <p class="card-text fw-bold"><%= number_to_currency(sneaker.price) %></p>
+                                        <% if sneaker.status == "sale" %>
+                                            <div class="d-flex">
+                                                <p class="price card-text text-mute text-decoration-line-through"><%= number_to_currency(sneaker.price) %></p>
+                                                <p class="price card-text fw-bold text-success mx-2"><%= number_to_currency(sneaker.sale_price) %></p>
+                                            </div>
+                                        <% else %>
+                                            <p class="price card-text fw-bold"><%= number_to_currency(sneaker.price) %></p>
+                                        <% end %>
                                     </div>
                                 </div>
                             </div>
