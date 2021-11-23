@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_22_201253) do
+ActiveRecord::Schema.define(version: 2021_11_23_032113) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
@@ -107,6 +107,13 @@ ActiveRecord::Schema.define(version: 2021_11_22_201253) do
     t.integer "sale_price"
     t.integer "price"
     t.index ["brand_id"], name: "index_sneakers_on_brand_id"
+  end
+
+  create_table "website_informations", force: :cascade do |t|
+    t.string "name"
+    t.text "description"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
