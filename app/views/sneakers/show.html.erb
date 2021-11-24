@@ -98,7 +98,7 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="brand-sneaker-container col-12 p-3">
-                    <div class="col-lg-9 mx-auto p-2">
+                    <div class="col-md-9 mx-auto p-2">
                         <h1 class="fw-bold fst-italic"><%= @sneaker.name %></h1>
                         <nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='currentColor'/%3E%3C/svg%3E&#34;);" aria-label="breadcrumb">
                             <ol class="breadcrumb fw-bold mt-3">
@@ -111,23 +111,21 @@
                         <hr class="mt-3">
                     </div>
                     <div class="d-flex flex-wrap justify-content-center">
-                        <div class="col-md-6 mt-3">
-                            <div class="col-12 p-2 mx-auto">
-                                <div class="card border-0 shadow-sm">
-                                    <% if @sneaker.image.present? %>
-                                        <%= image_tag @sneaker.image, class: "card-img-top shadow-sm img-fluid", alt: @sneaker.name %>
-                                    <% else %>
-                                        <%= image_tag @sneaker.image_path, class: "card-img-top shadow-sm img-fluid", alt: @sneaker.name %>
-                                    <% end %>
-                                    <div class="card-body">
-                                        <h5 class="card-title fw-bold text-warning"><%= @sneaker.name %></h5>
-                                        <h5 class="fw-bold mt-4">Product Information</h5>
-                                        <p class="card-text mt-2"><%= @sneaker.description %></p>
-                                    </div>
+                        <div class="col-12 col-md-6 mt-3 p-2">
+                            <div class="card border-0 shadow-sm">
+                                <% if @sneaker.image.present? %>
+                                    <%= image_tag @sneaker.image, class: "card-img-top shadow-sm img-fluid", alt: @sneaker.name %>
+                                <% else %>
+                                    <%= image_tag @sneaker.image_path, class: "card-img-top shadow-sm img-fluid", alt: @sneaker.name %>
+                                <% end %>
+                                <div class="card-body">
+                                    <h5 class="card-title fw-bold text-warning"><%= @sneaker.name %></h5>
+                                    <h5 class="fw-bold mt-4">Sneaker Information</h5>
+                                    <p class="card-text mt-2"><%= @sneaker.description %></p>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-3 mt-3 p-2">
+                        <div class="col-12 col-md-3 mt-3 p-2">
                             <div class="card border-0 shadow-sm">
                                 <div class="card-body">
                                     <% if @sneaker.status == "sale" %>
