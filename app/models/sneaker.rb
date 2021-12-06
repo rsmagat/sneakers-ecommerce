@@ -7,6 +7,6 @@ class Sneaker < ApplicationRecord
     validates :sale_price, allow_nil: true, numericality: { only_integer: true }
     validates :brand_id, :price, numericality: true
     validates :price, numericality: { only_integer: true }
-    
-    paginates_per 12
+
+    paginates_per 9
 end

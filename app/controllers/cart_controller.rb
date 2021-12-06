@@ -1,5 +1,36 @@
 class CartController < ApplicationController
-  def index
-    @brands = Brand.all
-  end
+    def index
+        @brands = Brand.all
+        @order = Order.new
+    end
+
+    def create
+        # logger.debug("Adding #{params[:id]} to cart.")
+        id = params[:id].to_i
+
+        session[:shopping_cart] << id
+
+        redirect_to "#{root_path}#sneaker-container"
+    end
+
+    def destroy
+        id = params[:id].to_i
+
+        session[:shopping_cart].delete(id)
+
+        redirect_to cart_index_path
+    end
+
+    def success
+        @brands = Brand.all
+    end
+
+    def fail
+        @brands = Brand.all
+    end
+
+    def orders
+        @brands = Brand.all
+        @orders = Order.where("customer_id LIKE ?", current_customer.id)
+    end
 end
