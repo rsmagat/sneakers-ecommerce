@@ -37,7 +37,7 @@
                                             <td><%= order.name %></td>
                                             <td><%= number_to_currency(order.price)  %></td>
                                             <td><%= order.quantity %></td>
-                                            <td><%= order.total %></td>
+                                            <td><%= number_to_currency(order.total) %></td>
                                             <td><%= order.status %></td>
                                             <td><%= order.created_at.to_date %></td>
                                             <td><a class="text-danger fw-bold text-decoration-none" href="#">Cancel</a></td>
