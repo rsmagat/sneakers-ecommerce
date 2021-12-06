@@ -12,6 +12,7 @@ class ApplicationController < ActionController::Base
         session[:total] = 0
 
         @provinces = Province.all
+        @brands = Brand.all
     end
 
     def cart

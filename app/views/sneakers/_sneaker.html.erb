@@ -20,7 +20,10 @@
                 <input type="hidden" name="qty" value="1">
                 <%= button_tag "Add to Cart", class: "btn btn-success shadow-sm mt-5 w-100 fw-bold text-uppercase" %>
             <% end %>
-            <button class="btn btn-warning shadow-sm mt-2 w-100 fw-bold text-uppercase">Buy Now</button>
+            <%= form_with url: buy_index_path, method: :post do %>
+                <input type="hidden" name="id" value="<%= sneaker.id %>" />
+                <%= button_tag "Buy Now", class: "btn btn-warning shadow-sm mt-2 w-100 fw-bold text-uppercase" %>
+            <% end %>
         </div>
     </div>
 </div>
