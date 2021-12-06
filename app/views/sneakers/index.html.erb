@@ -90,18 +90,18 @@
                                     <li><a class="dropdown-item" href="<%= destroy_customer_session_path %>" data-method="delete">Log Out</a></li>
                                 </ul>
                             </li>
-                        <% else %>
-                            <li class="nav-item mx-2">
-                                <a class="nav-link" href="
-                                    <% if customer_signed_in? %>
-                                        <%= edit_customer_registration_path %>
-                                    <% else %>
-                                        <%= new_customer_session_path %>
-                                    <% end %>
-                                ">
-                                <i class="fas fa-user-circle fs-5"></i></a>
-                            </li>
-                        <% end %>
+                    <% else %>
+                        <li class="nav-item mx-2">
+                            <a class="nav-link" href="
+                                <% if customer_signed_in? %>
+                                    <%= edit_customer_registration_path %>
+                                <% else %>
+                                    <%= new_customer_session_path %>
+                                <% end %>
+                            ">
+                            <i class="fas fa-user-circle fs-5"></i></a>
+                        </li>
+                    <% end %>
                 </div>
             </ul>
         </div>
@@ -111,7 +111,7 @@
             <a class="btn-close ms-auto" data-bs-toggle="collapse" data-bs-target="#searchbar" style="height: 5px;"></a>
             <form class="d-lg-flex flex-wrap justify-content-center mt-2" action="<%= search_path %>" method="get" accept-charset="UTF-8">
                 <div class="col-lg-2 mx-lg-2">
-                    <select class="form-select text-uppercase" name="brands">
+                    <select class="form-select" name="brands">
                         <option value="" selected>Brand</option>
                         <% @brands.each do |brand| %>
                             <option value="<%= brand.id %>"><%= brand.name %></option>
@@ -134,7 +134,7 @@
                 <div class="text-center text-light">
                     <h1 class="text-warning fw-bolder">Find Your Sneakers Today!</h1>
                     <p class="lead fs-6">Hundreds of sneakers available online and in-store.</p>
-                    <a href="#shoe-list"><button class="btn btn-success text-uppercase fw-bold mt-2">Explore Now</button></a>
+                    <a href="#shoe-list" class="masthead-btn btn btn-success text-uppercase fw-bold mt-2">Explore Now</a>
                 </div>
             </div>
         </div>

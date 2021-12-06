@@ -21,6 +21,12 @@ body * {
 #searchbar {
     transition: transform 0s;
 }
+    #searchbar .btn {
+        font-size: 13px;
+    }
+    #searchbar .form-select, #searchbar .form-control, #searchbar .btn {
+        height: 35px;
+    }
 
 .masthead {
     background-image: url(landing.jpg);
@@ -30,6 +36,9 @@ body * {
     background-size: cover;
     height: 710px;
 }
+    .masthead .masthead-btn {
+        font-size: 13px;
+    }
 
 .features {
     background-color: #f0f0dd;
