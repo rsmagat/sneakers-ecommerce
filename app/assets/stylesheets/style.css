@@ -20,6 +20,12 @@ body * {
     .navbar .dropdown-item {
         font-size: 13px;
     }
+    .navbar .nav-item #navbarDropdown:hover + .dropdown-menu {
+        display: block;
+    }
+    .navbar .dropdown-menu:hover {
+        display: block;
+    }
 
 #searchbar {
     transition: transform 0s;
@@ -41,6 +47,7 @@ body * {
 }
     .masthead .masthead-btn {
         font-size: 13px;
+        width: 160px;
     }
 
 .features {
