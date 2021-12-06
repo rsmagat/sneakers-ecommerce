@@ -17,6 +17,9 @@ body * {
         color: #fff;
         font-size: 13px;
     }
+    .navbar .dropdown-item {
+        font-size: 13px;
+    }
 
 #searchbar {
     transition: transform 0s;

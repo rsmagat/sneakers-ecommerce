@@ -69,23 +69,43 @@
     </div>
     <div class="d-xl-none d-block me-auto mt-2 mx-2 mx-xl-0">
         <ul class="navbar-nav text-uppercase">
-            <div class="d-flex mx-2">
+            <div class="d-flex">
                 <li class="nav-item mx-2">
                     <a class="nav-link" data-bs-toggle="collapse" href="#searchbar">
                         <i class="fas fa-search fs-5"></i>
                     </a>
                 </li>
-                <li class="nav-item mx-2">
-                    <a class="nav-link" href="<% if customer_signed_in? %> <%= edit_customer_registration_path %> <% else %> <%= new_customer_session_path %> <% end %>"><i class="fas fa-user-circle fs-5"></i></a>
+                <li class="nav-item">
+                    <a class="nav-link" href="<%= cart_index_path %>">
+                        <i class="fas fa-shopping-cart fs-5">
+                            <% if session[:shopping_cart].any? %>
+                                <sup class="text-white rounded-1 bg-danger pb-1 px-2 "><%= session[:shopping_cart].count %></sup>
+                            <% end %>
+                        </i>
+                    </a>
                 </li>
                 <% if customer_signed_in? %>
+                    <li class="nav-item dropdown mx-2">
+                        <a class="nav-link" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"><i class="fas fa-user-circle text-warning fs-5"></i>
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="<%= edit_customer_registration_path %>">My Account</a></li>
+                            <li><a class="dropdown-item" href="<%= orders_path %>">My Orders</a></li>
+                            <li><a class="dropdown-item" href="<%= destroy_customer_session_path %>" data-method="delete">Log Out</a></li>
+                        </ul>
+                    </li>
+                <% else %>
                     <li class="nav-item mx-2">
-                        <a class="nav-link" href="<%= destroy_customer_session_path %>" data-method="delete"><i class="fas fa-sign-out-alt fs-5"></i></i></a>
+                        <a class="nav-link" href="
+                            <% if customer_signed_in? %>
+                                <%= edit_customer_registration_path %>
+                            <% else %>
+                                <%= new_customer_session_path %>
+                            <% end %>
+                        ">
+                        <i class="fas fa-user-circle fs-5"></i></a>
                     </li>
                 <% end %>
-                <li class="nav-item mx-2">
-                    <a class="nav-link" href="#"><i class="fas fa-shopping-cart fs-5"></i></a>
-                </li>
             </div>
         </ul>
     </div>

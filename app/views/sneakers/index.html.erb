@@ -77,7 +77,12 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#"><i class="fas fa-shopping-cart fs-5"></i>
+                        <a class="nav-link" href="<%= cart_index_path %>">
+                            <i class="fas fa-shopping-cart fs-5">
+                                <% if session[:shopping_cart].any? %>
+                                    <sup class="text-white rounded-1 bg-danger pb-1 px-2 "><%= session[:shopping_cart].count %></sup>
+                                <% end %>
+                            </i>
                         </a>
                     </li>
                     <% if customer_signed_in? %>
