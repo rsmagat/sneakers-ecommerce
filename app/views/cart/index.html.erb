@@ -51,7 +51,7 @@
                                                     <h5 class="fw-bold">Qty:</h5>
                                                     <%= form_with(url: quantities_path) do %>
                                                         <input class="form-control w-100 mt-2" type="hidden" name="id" value="<%= sneaker.id %>" />
-                                                        <input class="form-control w-100 mt-2" type="number" name="cart_qty" value="<%= session[:shopping_cart].count(sneaker.id) %>" min="1" max="5" />
+                                                        <input class="form-control w-100 mt-2" type="number" name="cart_qty" value="<%= session[:shopping_cart].count(sneaker.id) %>" min="1" />
                                                         <%= button_tag "Update", class: "btn btn-success shadow-sm mt-3 w-100 fw-bold text-uppercase" %>
                                                     <% end %>
                                                 </div>
