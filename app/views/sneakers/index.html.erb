@@ -1,81 +1,55 @@
-<body>
-    <!-- NAVBAR -->
-    <nav class="navbar fixed-top navbar-expand-xl navbar-dark shadow-lg">
-        <div class="container-fluid mx-xl-5">
-            <a class="navbar-brand text-warning text-uppercase fs-5" href="<%= sneakers_path %>"><b>Sneakers</b> R <b>Us</b></a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarLinks">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarLinks">
-                <div class="mx-auto">
-                    <ul class="navbar-mid navbar-nav text-uppercase">
-                        <li class="nav-item active mx-xl-3">
-                            <a class="nav-link" href="<%= sneakers_path %>">Home</a>
-                        </li>
-                        <li class="nav-item mx-xl-3">
-                            <a class="nav-link" href="#sneaker-container">Sneakers</a>
-                        </li>
-                        <li class="nav-item mx-xl-3">
-                            <a class="nav-link" href="<%= brands_path %>">Brands</a>
-                        </li>
-                        <li class="nav-item mx-xl-3">
-                            <a class="nav-link" href="<%= about_path %>">About</a>
-                        </li>
-                        <li class="nav-item mx-xl-3">
-                            <a class="nav-link" href="<%= contact_path %>">Contact</a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="d-none d-xl-block">
-                    <ul class="navbar-nav text-uppercase small">
-                        <% if customer_signed_in? %>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"><i class="fas fa-user-circle text-warning fs-5"></i>
-                                </a>
-                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <li><a class="dropdown-item" href="<%= edit_customer_registration_path %>">My Account</a></li>
-                                    <li><a class="dropdown-item" href="<%= orders_path %>">My Orders</a></li>
-                                    <li><a class="dropdown-item" href="<%= destroy_customer_session_path %>" data-method="delete">Log Out</a></li>
-                                </ul>
-                            </li>
-                        <% else %>
-                            <li class="nav-item">
-                                <a class="nav-link" href="
-                                    <% if customer_signed_in? %>
-                                        <%= edit_customer_registration_path %>
-                                    <% else %>
-                                        <%= new_customer_session_path %>
-                                    <% end %>
-                                ">
-                                <i class="fas fa-user-circle fs-5"></i></a>
-                            </li>
-                        <% end %>
-                        <li class="nav-item">
-                            <a class="nav-link" data-bs-toggle="collapse" href="#searchbar">
-                                <i class="fas fa-search fs-5"></i>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="<%= cart_index_path %>">
-                                <i class="fas fa-shopping-cart fs-5">
-                                    <% if session[:shopping_cart].any? %>
-                                        <% if session[:shopping_cart].count > 0 && session[:shopping_cart].count < 100 %>
-                                            <sup class="text-white rounded-1 bg-danger pb-1 px-2 "><%= session[:shopping_cart].count %></sup>
-                                        <% else %>
-                                            <sup class="text-white rounded-1 bg-danger pb-1 px-2 ">99+</sup>
-                                        <% end %>
-                                    <% end %>
-                                </i>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
+<!-- NAVBAR -->
+<nav class="navbar fixed-top navbar-expand-xl navbar-dark shadow-lg">
+    <div class="container-fluid mx-xl-5">
+        <a class="navbar-brand text-warning text-uppercase fs-5" href="<%= sneakers_path %>"><b>Sneakers</b> R <b>Us</b></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarLinks">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarLinks">
+            <div class="mx-auto">
+                <ul class="navbar-mid navbar-nav text-uppercase">
+                    <li class="nav-item active mx-xl-3">
+                        <a class="nav-link" href="<%= sneakers_path %>">Home</a>
+                    </li>
+                    <li class="nav-item mx-xl-3">
+                        <a class="nav-link" href="#sneaker-container">Sneakers</a>
+                    </li>
+                    <li class="nav-item mx-xl-3">
+                        <a class="nav-link" href="<%= brands_path %>">Brands</a>
+                    </li>
+                    <li class="nav-item mx-xl-3">
+                        <a class="nav-link" href="<%= about_path %>">About</a>
+                    </li>
+                    <li class="nav-item mx-xl-3">
+                        <a class="nav-link" href="<%= contact_path %>">Contact</a>
+                    </li>
+                </ul>
             </div>
-        </div>
-        <div class="d-xl-none d-block me-auto mt-2 mx-2 mx-xl-0">
-            <ul class="navbar-nav text-uppercase">
-                <div class="d-flex">
-                    <li class="nav-item mx-2">
+            <div class="d-none d-xl-block">
+                <ul class="navbar-nav text-uppercase small">
+                    <% if customer_signed_in? %>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"><i class="fas fa-user-circle text-warning fs-5"></i>
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="<%= edit_customer_registration_path %>">My Account</a></li>
+                                <li><a class="dropdown-item" href="<%= orders_path %>">My Orders</a></li>
+                                <li><a class="dropdown-item" href="<%= destroy_customer_session_path %>" data-method="delete">Log Out</a></li>
+                            </ul>
+                        </li>
+                    <% else %>
+                        <li class="nav-item">
+                            <a class="nav-link" href="
+                                <% if customer_signed_in? %>
+                                    <%= edit_customer_registration_path %>
+                                <% else %>
+                                    <%= new_customer_session_path %>
+                                <% end %>
+                            ">
+                            <i class="fas fa-user-circle fs-5"></i></a>
+                        </li>
+                    <% end %>
+                    <li class="nav-item">
                         <a class="nav-link" data-bs-toggle="collapse" href="#searchbar">
                             <i class="fas fa-search fs-5"></i>
                         </a>
@@ -93,121 +67,156 @@
                             </i>
                         </a>
                     </li>
-                    <% if customer_signed_in? %>
-                            <li class="nav-item dropdown mx-2">
-                                <a class="nav-link" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"><i class="fas fa-user-circle text-warning fs-5"></i>
-                                </a>
-                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <li><a class="dropdown-item" href="<%= edit_customer_registration_path %>">My Account</a></li>
-                                    <li><a class="dropdown-item" href="<%= orders_path %>">My Orders</a></li>
-                                    <li><a class="dropdown-item" href="<%= destroy_customer_session_path %>" data-method="delete">Log Out</a></li>
-                                </ul>
-                            </li>
-                    <% else %>
-                        <li class="nav-item mx-2">
-                            <a class="nav-link" href="
-                                <% if customer_signed_in? %>
-                                    <%= edit_customer_registration_path %>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="d-xl-none d-block me-auto mt-2 mx-2 mx-xl-0">
+        <ul class="navbar-nav text-uppercase">
+            <div class="d-flex">
+                <li class="nav-item mx-2">
+                    <a class="nav-link" data-bs-toggle="collapse" href="#searchbar">
+                        <i class="fas fa-search fs-5"></i>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="<%= cart_index_path %>">
+                        <i class="fas fa-shopping-cart fs-5">
+                            <% if session[:shopping_cart].any? %>
+                                <% if session[:shopping_cart].count > 0 && session[:shopping_cart].count < 100 %>
+                                    <sup class="text-white rounded-1 bg-danger pb-1 px-2 "><%= session[:shopping_cart].count %></sup>
                                 <% else %>
-                                    <%= new_customer_session_path %>
+                                    <sup class="text-white rounded-1 bg-danger pb-1 px-2 ">99+</sup>
                                 <% end %>
-                            ">
-                            <i class="fas fa-user-circle fs-5"></i></a>
+                            <% end %>
+                        </i>
+                    </a>
+                </li>
+                <% if customer_signed_in? %>
+                        <li class="nav-item dropdown mx-2">
+                            <a class="nav-link" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"><i class="fas fa-user-circle text-warning fs-5"></i>
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="<%= edit_customer_registration_path %>">My Account</a></li>
+                                <li><a class="dropdown-item" href="<%= orders_path %>">My Orders</a></li>
+                                <li><a class="dropdown-item" href="<%= destroy_customer_session_path %>" data-method="delete">Log Out</a></li>
+                            </ul>
                         </li>
+                <% else %>
+                    <li class="nav-item mx-2">
+                        <a class="nav-link" href="
+                            <% if customer_signed_in? %>
+                                <%= edit_customer_registration_path %>
+                            <% else %>
+                                <%= new_customer_session_path %>
+                            <% end %>
+                        ">
+                        <i class="fas fa-user-circle fs-5"></i></a>
+                    </li>
+                <% end %>
+            </div>
+        </ul>
+    </div>
+</nav>
+<div class="collapse" id="searchbar">
+    <div class="card card-body rounded-0 shadow fixed-top mt-5 p-3">
+        <a class="btn-close ms-auto" data-bs-toggle="collapse" data-bs-target="#searchbar" style="height: 5px;"></a>
+        <form class="d-lg-flex flex-wrap justify-content-center mt-2" action="<%= search_path %>" method="get" accept-charset="UTF-8">
+            <div class="col-lg-2 mx-lg-2">
+                <select class="form-select" name="brands">
+                    <option value="" selected>Brand</option>
+                    <% @brands.each do |brand| %>
+                        <option value="<%= brand.id %>"><%= brand.name %></option>
+                    <% end %>
+                </select>
+            </div>
+            <div class="col-lg-8 mx-lg-1 mt-2 mt-lg-0">
+                <input class="form-control" name="keywords" type="search" placeholder="ex. Air Jordan 1">
+            </div>
+            <div class="col-xl-1 mx-lg-2 mt-2 mt-lg-0">
+                <button class="btn btn-success text-uppercase fw-bold w-100" type="submit">Search</button>
+            </div>
+        </form>
+    </div>
+</div>
+<!-- HEADER -->
+<header class="masthead">
+    <div class="container h-100">
+        <div class="row h-100 align-items-center">
+            <div class="text-center text-light">
+                <h1 class="text-warning fw-bolder">Find Your Sneakers Today!</h1>
+                <p class="lead fs-6">Hundreds of sneakers available online and in-store.</p>
+                <a href="#shoe-list" class="masthead-btn btn btn-success text-uppercase fw-bold shadow mt-2 pt-2 pb-2">Explore Now</a>
+            </div>
+        </div>
+    </div>
+</header>
+<!-- WEBSITE INFORMATION -->
+<div class="features">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12 p-3">
+                <div class="col-lg-9 d-flex flex-wrap mx-auto mt-2">
+                    <div class="col-12 col-md-4 p-2">
+                        <div class="feature border rounded-1 text-center shadow-sm p-3 h-100">
+                            <i class="fas fa-shipping-fast fs-3 mb-3"></i>
+                            <h6 class="feature-header text-uppercase fw-bold">Canada-Wide Delivery</h6>
+                            <p>Shipping is available to anywhere in Canada.</p>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-4 p-2">
+                        <div class="feature border rounded-1 text-center shadow-sm p-3 h-100">
+                            <i class="fas fa-lock fs-3 mb-3"></i>
+                            <h6 class="feature-header text-uppercase fw-bold">Secure Payments</h6>
+                            <p>Online payments are secured and encrypted.</p>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-4 p-2">
+                        <div class="feature border rounded-1 text-center shadow-sm p-3 h-100">
+                            <i class="fas fa-undo-alt fs-3 mb-3"></i>
+                            <h6 class="feature-header text-uppercase fw-bold">Simple Returns</h6>
+                            <p>Returning an item is easy and no hassle.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- SHOE LIST -->
+<section id="shoe-list">
+    <div class="container-fluid">
+        <div class="row" id="sneaker-container">
+            <div class="col-12 p-3">
+                <div class="col-lg-9 d-flex flex-wrap mx-auto mt-5 align-items-center p-2">
+                    <h5 class="fw-bold">Filter Results:</h5>
+                    <div class="filter d-flex flex-wrap justify-content-center pt-sm-0 pt-2">
+                        <div class="pb-sm-0 pb-2"><a href="<%= sale_path %>#sneaker-container" class="btn btn-success text-uppercase fw-bold pt-2 shadow pb-2 mx-2">Sale</a></div>
+                        <div class="pb-sm-0 pb-2"><a href="<%= new_path %>#sneaker-container" class="btn btn-success text-uppercase fw-bold pt-2 shadow pb-2 mx-2">New</a></div>
+                        <div class="pb-sm-0 pb-2"><a href="<%= sneakers_path %>#sneaker-container" class="btn btn-warning text-uppercase fw-bold pt-2 shadow pb-2 mx-2">Reset</a></div>
+                    </div>
+                </div>
+                <div class="col-lg-9 mx-auto p-2">
+                    <%= paginate @sneakers, window: 2 %>
+                    <hr class="mt-3">
+                </div>
+                <div class="col-lg-9 mx-auto p-2">
+                    <% if flash[:alert] %>
+                        <div class="alert alert-success alert-dismissible fade show d-flex align-items-center m-0" role="alert">
+                        <i class="fas fa-shopping-bag fs-3 mx-3"></i>
+                        <div>
+                            <p><%= flash[:alert] %></p>
+                        </div>
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
                     <% end %>
                 </div>
-            </ul>
-        </div>
-    </nav>
-    <div class="collapse" id="searchbar">
-        <div class="card card-body rounded-0 shadow fixed-top mt-5 p-3">
-            <a class="btn-close ms-auto" data-bs-toggle="collapse" data-bs-target="#searchbar" style="height: 5px;"></a>
-            <form class="d-lg-flex flex-wrap justify-content-center mt-2" action="<%= search_path %>" method="get" accept-charset="UTF-8">
-                <div class="col-lg-2 mx-lg-2">
-                    <select class="form-select" name="brands">
-                        <option value="" selected>Brand</option>
-                        <% @brands.each do |brand| %>
-                            <option value="<%= brand.id %>"><%= brand.name %></option>
-                        <% end %>
-                    </select>
-                </div>
-                <div class="col-lg-8 mx-lg-1 mt-2 mt-lg-0">
-                    <input class="form-control" name="keywords" type="search" placeholder="ex. Air Jordan 1">
-                </div>
-                <div class="col-xl-1 mx-lg-2 mt-2 mt-lg-0">
-                    <button class="btn btn-success text-uppercase fw-bold w-100" type="submit">Search</button>
-                </div>
-            </form>
-        </div>
-    </div>
-    <!-- HEADER -->
-    <header class="masthead">
-        <div class="container h-100">
-            <div class="row h-100 align-items-center">
-                <div class="text-center text-light">
-                    <h1 class="text-warning fw-bolder">Find Your Sneakers Today!</h1>
-                    <p class="lead fs-6">Hundreds of sneakers available online and in-store.</p>
-                    <a href="#shoe-list" class="masthead-btn btn btn-success text-uppercase fw-bold shadow mt-2 pt-2 pb-2">Explore Now</a>
-                </div>
-            </div>
-        </div>
-    </header>
-    <!-- WEBSITE INFORMATION -->
-    <div class="features">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-12 p-3">
-                    <div class="col-lg-9 d-flex flex-wrap mx-auto mt-2">
-                        <div class="col-12 col-md-4 p-2">
-                            <div class="feature border rounded-1 text-center shadow-sm p-3 h-100">
-                                <i class="fas fa-shipping-fast fs-3 mb-3"></i>
-                                <h6 class="feature-header text-uppercase fw-bold">Canada-Wide Delivery</h6>
-                                <p>Shipping is available to anywhere in Canada.</p>
-                            </div>
-                        </div>
-                        <div class="col-12 col-md-4 p-2">
-                            <div class="feature border rounded-1 text-center shadow-sm p-3 h-100">
-                                <i class="fas fa-lock fs-3 mb-3"></i>
-                                <h6 class="feature-header text-uppercase fw-bold">Secure Payments</h6>
-                                <p>Online payments are secured and encrypted.</p>
-                            </div>
-                        </div>
-                        <div class="col-12 col-md-4 p-2">
-                            <div class="feature border rounded-1 text-center shadow-sm p-3 h-100">
-                                <i class="fas fa-undo-alt fs-3 mb-3"></i>
-                                <h6 class="feature-header text-uppercase fw-bold">Simple Returns</h6>
-                                <p>Returning an item is easy and no hassle.</p>
-                            </div>
-                        </div>
-                    </div>
+                <div class="col-lg-9 d-flex flex-wrap justify-content-start mx-auto">
+                    <% @sneakers.each do |sneaker| %>
+                        <%= render "sneaker", sneaker: sneaker %>
+                    <% end %>
                 </div>
             </div>
         </div>
     </div>
-    <!-- SHOE LIST -->
-    <section id="shoe-list">
-        <div class="container-fluid">
-            <div class="row" id="sneaker-container">
-                <div class="col-12 p-3">
-                    <div class="col-lg-9 d-flex flex-wrap mx-auto mt-5 align-items-center p-2">
-                        <h5 class="fw-bold">Filter Results:</h5>
-                        <div class="filter d-flex flex-wrap justify-content-center pt-sm-0 pt-2">
-                            <div class="pb-sm-0 pb-2"><a href="<%= sale_path %>#sneaker-container" class="btn btn-success text-uppercase fw-bold pt-2 shadow pb-2 mx-2">Sale</a></div>
-                            <div class="pb-sm-0 pb-2"><a href="<%= new_path %>#sneaker-container" class="btn btn-success text-uppercase fw-bold pt-2 shadow pb-2 mx-2">New</a></div>
-                            <div class="pb-sm-0 pb-2"><a href="<%= sneakers_path %>#sneaker-container" class="btn btn-warning text-uppercase fw-bold pt-2 shadow pb-2 mx-2">Reset</a></div>
-                        </div>
-                    </div>
-                    <div class="col-lg-9 mx-auto p-2">
-                        <%= paginate @sneakers, window: 2 %>
-                        <hr class="mt-3">
-                    </div>
-                    <div class="col-lg-9 mt-4 d-flex flex-wrap justify-content-start mx-auto">
-                        <% @sneakers.each do |sneaker| %>
-                            <%= render "sneaker", sneaker: sneaker %>
-                        <% end %>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-</body>
+</section>

@@ -1,73 +1,71 @@
-<body>
-    <%= render "sneakers/header" %>
-    <!-- HEADER -->
-    <header class="masthead">
-        <div class="container h-100">
-            <div class="row h-100 align-items-center">
-                <div class="text-center text-light">
-                    <h1 class="text-warning fw-bolder">Find Your Sneakers Today!</h1>
-                    <p class="lead fs-6">Hundreds of sneakers available online and in-store.</p>
-                    <a href="#shoe-list"><button class="btn btn-success text-uppercase fw-bold mt-2">Explore Now</button></a>
-                </div>
+<%= render "sneakers/header" %>
+<!-- HEADER -->
+<header class="masthead">
+    <div class="container h-100">
+        <div class="row h-100 align-items-center">
+            <div class="text-center text-light">
+                <h1 class="text-warning fw-bolder">Find Your Sneakers Today!</h1>
+                <p class="lead fs-6">Hundreds of sneakers available online and in-store.</p>
+                <a href="#shoe-list"><button class="btn btn-success text-uppercase fw-bold mt-2">Explore Now</button></a>
             </div>
         </div>
-    </header>
-    <!-- WEBSITE INFORMATION -->
-    <div class="features">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-12 p-3">
-                    <div class="col-lg-9 d-flex flex-wrap mx-auto mt-2">
-                        <div class="col-12 col-md-4 p-2">
-                            <div class="feature rounded-1 text-center shadow-sm p-3 h-100">
-                                <i class="fas fa-shipping-fast fs-3 mb-3"></i>
-                                <h6 class="feature-header text-uppercase fw-bold">Canada-Wide Delivery</h6>
-                                <p>Shipping is available to anywhere in Canada.</p>
-                            </div>
+    </div>
+</header>
+<!-- WEBSITE INFORMATION -->
+<div class="features">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12 p-3">
+                <div class="col-lg-9 d-flex flex-wrap mx-auto mt-2">
+                    <div class="col-12 col-md-4 p-2">
+                        <div class="feature rounded-1 text-center shadow-sm p-3 h-100">
+                            <i class="fas fa-shipping-fast fs-3 mb-3"></i>
+                            <h6 class="feature-header text-uppercase fw-bold">Canada-Wide Delivery</h6>
+                            <p>Shipping is available to anywhere in Canada.</p>
                         </div>
-                        <div class="col-12 col-md-4 p-2">
-                            <div class="feature rounded-1 text-center shadow-sm p-3 h-100">
-                                <i class="fas fa-lock fs-3 mb-3"></i>
-                                <h6 class="feature-header text-uppercase fw-bold">Secure Payments</h6>
-                                <p>Online payments are secured and encrypted.</p>
-                            </div>
+                    </div>
+                    <div class="col-12 col-md-4 p-2">
+                        <div class="feature rounded-1 text-center shadow-sm p-3 h-100">
+                            <i class="fas fa-lock fs-3 mb-3"></i>
+                            <h6 class="feature-header text-uppercase fw-bold">Secure Payments</h6>
+                            <p>Online payments are secured and encrypted.</p>
                         </div>
-                        <div class="col-12 col-md-4 p-2">
-                            <div class="feature rounded-1 text-center shadow-sm p-3 h-100">
-                                <i class="fas fa-undo-alt fs-3 mb-3"></i>
-                                <h6 class="feature-header text-uppercase fw-bold">Simple Returns</h6>
-                                <p>Returning an item is easy and no hassle.</p>
-                            </div>
+                    </div>
+                    <div class="col-12 col-md-4 p-2">
+                        <div class="feature rounded-1 text-center shadow-sm p-3 h-100">
+                            <i class="fas fa-undo-alt fs-3 mb-3"></i>
+                            <h6 class="feature-header text-uppercase fw-bold">Simple Returns</h6>
+                            <p>Returning an item is easy and no hassle.</p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <!-- SHOE LIST -->
-    <section id="shoe-list">
-        <div class="container-fluid">
-            <div class="row" id="sneaker-container">
-                <div class="col-12 p-3">
-                    <div class="col-lg-9 d-flex flex-wrap mx-auto mt-5 align-items-center p-2">
-                        <h5 class="fw-bold">Filter Results:</h5>
-                        <div class="filter d-flex flex-wrap justify-content-center pt-sm-0 pt-2">
-                            <div class="pb-sm-0 pb-2"><a href="<%= sale_path %>#sneaker-container" class="btn btn-success text-uppercase fw-bold pt-2 shadow pb-2 mx-2 pt-0">Sale</a></div>
-                            <div class="pb-sm-0 pb-2"><a href="<%= new_path %>#sneaker-container" class="btn btn-success text-uppercase fw-bold pt-2 shadow pb-2 mx-2">New</a></div>
-                            <div class="pb-sm-0 pb-2"><a href="<%= sneakers_path %>#sneaker-container" class="btn btn-warning text-uppercase fw-bold pt-2 shadow pb-2 mx-2">Reset</a></div>
-                        </div>
+</div>
+<!-- SHOE LIST -->
+<section id="shoe-list">
+    <div class="container-fluid">
+        <div class="row" id="sneaker-container">
+            <div class="col-12 p-3">
+                <div class="col-lg-9 d-flex flex-wrap mx-auto mt-5 align-items-center p-2">
+                    <h5 class="fw-bold">Filter Results:</h5>
+                    <div class="filter d-flex flex-wrap justify-content-center pt-sm-0 pt-2">
+                        <div class="pb-sm-0 pb-2"><a href="<%= sale_path %>#sneaker-container" class="btn btn-success text-uppercase fw-bold pt-2 shadow pb-2 mx-2 pt-0">Sale</a></div>
+                        <div class="pb-sm-0 pb-2"><a href="<%= new_path %>#sneaker-container" class="btn btn-success text-uppercase fw-bold pt-2 shadow pb-2 mx-2">New</a></div>
+                        <div class="pb-sm-0 pb-2"><a href="<%= sneakers_path %>#sneaker-container" class="btn btn-warning text-uppercase fw-bold pt-2 shadow pb-2 mx-2">Reset</a></div>
                     </div>
-                    <div class="col-lg-9 mx-auto p-2">
-                        <%= paginate @new, window: 2 %>
-                        <hr class="mt-3">
-                    </div>
-                    <div class="col-lg-9 mt-4 d-flex flex-wrap justify-content-start mx-auto">
-                        <% @new.each do |sneaker| %>
-                            <%= render "sneaker", sneaker: sneaker %>
-                        <% end %>
-                    </div>
+                </div>
+                <div class="col-lg-9 mx-auto p-2">
+                    <%= paginate @new, window: 2 %>
+                    <hr class="mt-3">
+                </div>
+                <div class="col-lg-9 mt-4 d-flex flex-wrap justify-content-start mx-auto">
+                    <% @new.each do |sneaker| %>
+                        <%= render "sneaker", sneaker: sneaker %>
+                    <% end %>
                 </div>
             </div>
         </div>
-    </section>
-</body>
+    </div>
+</section>

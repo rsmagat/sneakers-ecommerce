@@ -7,15 +7,18 @@ class CartController < ApplicationController
     def create
         # logger.debug("Adding #{params[:id]} to cart.")
         id = params[:id].to_i
+        sneaker = Sneaker.find(id)
 
         session[:shopping_cart] << id
+
+        flash[:alert] = "#{sneaker.name} has been added to your cart."
+
 
         redirect_to "#{root_path}#sneaker-container"
     end
 
     def destroy
         id = params[:id].to_i
-
         session[:shopping_cart].delete(id)
 
         redirect_to cart_index_path
