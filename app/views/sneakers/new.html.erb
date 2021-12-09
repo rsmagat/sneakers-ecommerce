@@ -60,7 +60,7 @@
                     <%= paginate @new, window: 2 %>
                     <hr class="mt-3">
                 </div>
-                <div class="col-lg-9 mt-4 d-flex flex-wrap justify-content-start mx-auto">
+                <div class="col-lg-9 d-flex flex-wrap justify-content-start mx-auto mt-4">
                     <% @new.each do |sneaker| %>
                         <%= render "sneaker", sneaker: sneaker %>
                     <% end %>
@@ -69,3 +69,4 @@
         </div>
     </div>
 </section>
+<%= render "footer" %>

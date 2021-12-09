@@ -47,11 +47,11 @@
 <section id="shoe-list">
     <div class="container-fluid">
         <div class="row" id="sneaker-container">
-            <div class="col-12 p-3 my-5">
-                <div class="col-lg-9 d-flex flex-wrap mx-auto align-items-center p-2">
+            <div class="col-12 p-3">
+                <div class="col-lg-9 d-flex flex-wrap mx-auto mt-5 align-items-center p-2">
                     <h5 class="fw-bold">Filter Results:</h5>
                     <div class="filter d-flex flex-wrap justify-content-center pt-sm-0 pt-2">
-                        <div class="pb-sm-0 pb-2"><a href="<%= sale_path %>#sneaker-container" class="btn btn-success text-uppercase fw-bold pt-2 shadow pb-2 mx-2">Sale</a></div>
+                        <div class="pb-sm-0 pb-2"><a href="<%= sale_path %>#sneaker-container" class="btn btn-success text-uppercase fw-bold pt-2 shadow pb-2 mx-2 pt-0">Sale</a></div>
                         <div class="pb-sm-0 pb-2"><a href="<%= new_path %>#sneaker-container" class="btn btn-success text-uppercase fw-bold pt-2 shadow pb-2 mx-2">New</a></div>
                         <div class="pb-sm-0 pb-2"><a href="<%= sneakers_path %>#sneaker-container" class="btn btn-warning text-uppercase fw-bold pt-2 shadow pb-2 mx-2">Reset</a></div>
                     </div>
@@ -71,7 +71,7 @@
                     </div>
                     <% end %>
                 </div>
-                <div class="col-lg-9 d-flex flex-wrap justify-content-start mx-auto">
+                <div class="col-lg-9 d-flex flex-wrap justify-content-start mx-auto mt-4">
                     <% @sneakers.each do |sneaker| %>
                         <%= render "sneaker", sneaker: sneaker %>
                     <% end %>
@@ -80,3 +80,4 @@
         </div>
     </div>
 </section>
+<%= render "footer" %>
