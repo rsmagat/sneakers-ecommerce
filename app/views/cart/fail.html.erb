@@ -1,28 +1,22 @@
-<body id="brands-body">
-    <%= render "brands/header" %>
-    <!-- MESSAGE -->
-    <section id="shoe-list">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="brand-sneaker-container col-12 p-3">
-                    <div class="col-lg-9 mx-auto p-2">
-                        <% if customer_signed_in? %>
-                            <div class="alert alert-danger shadow-sm m-0 d-flex align-items-center justify-content-center mt-2" role="alert">
-                                <i class="fas fa-times-circle fs-1 mx-3"></i>
-                                <p class="lead my-4">There was a problem with your purchase. Please <a class="text-decoration-none" href="#">click here</a> to try again.</p>
-                            </div>
-                        <% else %>
-                            <div class="alert alert-danger shadow-sm m-0 d-flex align-items-center justify-content-center mt-2" role="alert">
-                                <i class="fas fa-exclamation-triangle fs-1 mx-3"></i>
-                                <p class="border"><%= session[:order] %></p>
-                                <p class="lead my-4">You do not have access to this page. Please <a class="text-decoration-none" href="<%= sneakers_path %>">click here</a> to return.</p>
-                            </div>
-                        <% end %>
+<%= render "brands/header" %>
+<!-- MESSAGE -->
+<div class="container-fluid">
+    <div class="row">
+        <div class="column-margin col-12 p-3">
+            <div class="col-lg-9 mx-auto p-2">
+                <% if customer_signed_in? %>
+                    <div class="alert alert-danger shadow-sm m-0 d-flex align-items-center justify-content-center mt-2" role="alert">
+                        <i class="fas fa-times-circle fs-1 mx-3"></i>
+                        <p class="lead my-4">There was a problem with your purchase. Please <a class="text-decoration-none" href="#">click here</a> to try again.</p>
                     </div>
-                <div>
+                <% else %>
+                    <div class="alert alert-danger shadow-sm m-0 d-flex align-items-center justify-content-center mt-2" role="alert">
+                        <i class="fas fa-exclamation-triangle fs-1 mx-3"></i>
+                        <p class="border"><%= session[:order] %></p>
+                        <p class="lead my-4">You do not have access to this page. Please <a class="text-decoration-none" href="<%= sneakers_path %>">click here</a> to return.</p>
+                    </div>
+                <% end %>
             </div>
         </div>
-    </section>
-</body>
-
-</html>
+    </div>
+</div>

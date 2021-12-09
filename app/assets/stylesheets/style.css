@@ -10,9 +10,6 @@ body * {
 .navbar {
     background-color: rgb(41, 41, 41);
 }
-    .navbar-brand {
-
-    }
     .navbar .nav-item .nav-link {
         color: #fff;
         font-size: 13px;
@@ -20,7 +17,7 @@ body * {
     .navbar .dropdown-item {
         font-size: 13px;
     }
-    .navbar .nav-item #navbarDropdown:hover + .dropdown-menu {
+    .navbar .nav-item #navbarDropdown-1:hover + .dropdown-menu, .navbar .nav-item #navbarDropdown-2:hover + .dropdown-menu  {
         display: block;
     }
     .navbar .dropdown-menu:hover {
@@ -60,35 +57,27 @@ body * {
         letter-spacing: 1px;
     }
 
-#shoe-list {
-    background-color: #f0f0e9;
+#shoe-list .btn a, #shoe-list .btn {
+    font-size: 13px;
 }
-    #shoe-list .btn a, #shoe-list .btn {
-        font-size: 13px;
-    }
-    #shoe-list .filter a {
-        width: 110px;
-    }
-    #shoe-list .brand-sneaker-container {
-        margin-top: 100px;
-    }
-    #shoe-list .price {
-        font-family: 'Lato', sans-serif;
-    }
-    #shoe-list .delete-list {
-        list-style: none;
-    }
-    #shoe-list .delete-list .delete-icon:hover {
-        background-color: gainsboro;
-    }
-
-#brands-body {
-    background-color: #f0f0e9;
+#shoe-list .filter a {
+    width: 110px;
 }
-    #brands-body .brand-container {
-        margin-top: 100px;
-    }
 
-#customers-body {
+.column-margin {
+    margin-top: 100px;
+}
+
+#shoe-list .price {
+    font-family: 'Lato', sans-serif;
+}
+#shoe-list .delete-list {
+    list-style: none;
+}
+#shoe-list .delete-list .delete-icon:hover {
+    background-color: gainsboro;
+}
+
+#body-background {
     background-color: #f0f0e9;
 }

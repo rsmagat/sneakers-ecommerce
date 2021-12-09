@@ -28,5 +28,4 @@ Rails.application.routes.draw do
     resources :add_to_cart_show, only: %i[create]
     resources :orders, only: %i[create]
     resources :quantities, only: %i[create]
-
 end

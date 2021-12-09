@@ -13,12 +13,12 @@ class CartController < ApplicationController
 
         flash[:alert] = "#{sneaker.name} has been added to your cart."
 
-
         redirect_to "#{root_path}#sneaker-container"
     end
 
     def destroy
         id = params[:id].to_i
+
         session[:shopping_cart].delete(id)
 
         redirect_to cart_index_path
@@ -34,6 +34,9 @@ class CartController < ApplicationController
 
     def orders
         @brands = Brand.all
-        @orders = Order.where("customer_id LIKE ?", current_customer.id)
+
+        if customer_signed_in?
+            @orders = Order.where("customer_id LIKE ?", current_customer.id)
+        end
     end
 end
