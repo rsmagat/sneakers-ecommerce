@@ -2,8 +2,10 @@ require 'faker'
 
 Sneaker.delete_all
 Brand.delete_all
-Province.delete_all
+Order.delete_all
 Customer.delete_all
+Province.delete_all
+AdminUser.delete_all
 
 brands = [
     { :name => "Jordan", :image_path => "brands/jordan.png"},
@@ -83,4 +85,4 @@ puts "Created #{Brand.count} brands."
 puts "Created #{Sneaker.count} sneakers."
 puts "Created #{Province.count} provinces."
 
-AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
+AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password')
