@@ -34,9 +34,6 @@ class CartController < ApplicationController
 
     def orders
         @brands = Brand.all
-
-        if customer_signed_in?
-            @orders = Order.where("customer_id LIKE ?", current_customer.id)
-        end
+        @orders = Order.where("customer_id LIKE ?", current_customer.id)
     end
 end
